@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_41.html -->
+<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_42.html -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ежедневный отчёт BarabashTech</title>
-<link rel="stylesheet" href="file:///C:/Users/PC/Downloads/%D0%95%D0%B6%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%82%D1%87%D1%91%D1%82%20BarabashTech_files/tabler-icons.min.css">
-<link href="file:///C:/Users/PC/Downloads/%D0%95%D0%B6%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%82%D1%87%D1%91%D1%82%20BarabashTech_files/css2" rel="stylesheet">
+<link rel="stylesheet" href="./Ежедневный отчёт BarabashTech_files/tabler-icons.min.css">
+<link href="./Ежедневный отчёт BarabashTech_files/css2" rel="stylesheet">
 <style>
 /* LOGIN WINDOWS STYLE */
 #loginScreen{
@@ -201,12 +201,12 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 #autosave-bar .dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
 @media print{#autosave-bar{display:none!important}}
 </style>
-<script src="file:///C:/Users/PC/Downloads/%D0%95%D0%B6%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%82%D1%87%D1%91%D1%82%20BarabashTech_files/html2canvas.min.js.%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F"></script>
+<script src="./Ежедневный отчёт BarabashTech_files/html2canvas.min.js.Без названия"></script>
 </head>
 <body>
 
 <div id="loginScreen">
-  <div class="win-time" id="winTime">17:59</div>
+  <div class="win-time" id="winTime">18:06</div>
   <div class="win-date" id="winDate">Суббота, 13 июня</div>
   <div class="win-users" id="winUsers">
     <div class="win-user" id="wu-ADMIN" onclick="selectUser(&#39;ADMIN&#39;)">
@@ -235,7 +235,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
       <span onclick="backToUsers()" style="color:rgba(255,255,255,0.5);font-size:12px;cursor:pointer;text-decoration:underline;">← Сменить пользователя</span>
     </div>
   </div>
-  <div class="win-clock-bar" id="winClockBar">17:59</div>
+  <div class="win-clock-bar" id="winClockBar">18:06</div>
 </div>
 
 <div class="wrap" id="mainApp" style="display:none">
@@ -311,13 +311,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
     <th style="width:16%">Способ оплаты</th>
     <th style="width:8%">Доставка</th>
     <th style="width:16%">Оплата<br>доставки</th>
-  </tr></thead><tbody id="expBody"><tr>
-        <td><div style="display:flex;align-items:center;gap:5px"><input type="text" value="RTX3060" placeholder="Статья..." oninput="upd(&#39;exp&#39;,1781361299783.1973,&#39;name&#39;,this.value)" style="flex:1"><button class="tp-btn p" onclick="toggleExpCat(1781361299783.1973)" title="Товар / Прочее">П</button></div></td>
-        <td><input type="number" value="1000" placeholder="0" oninput="upd(&#39;exp&#39;,1781361299783.1973,&#39;amount&#39;,this.value);recalc()"></td>
-        <td><select onchange="updExpPay(1781361299783.1973,this.value)"><option selected="">Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Наличные</option><option>Нал/Пер</option><option>Р/С</option><option>Перевод</option></select></td>
-        <td><input type="number" value="" placeholder="0" oninput="upd(&#39;exp&#39;,1781361299783.1973,&#39;delivery&#39;,this.value);recalc()"></td>
-        <td class="has-del"><select onchange="updSel(&#39;exp&#39;,1781361299783.1973,&#39;delPay&#39;,this.value)"><option selected="">Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Наличные</option><option>Нал/Пер</option><option>Р/С</option><option>Перевод</option></select><button class="del-btn" onclick="delRow(&#39;exp&#39;,1781361299783.1973)" title="Удалить"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></td>
-      </tr></tbody></table>
+  </tr></thead><tbody id="expBody"></tbody></table>
   <button class="add-row-btn" onclick="addRow(&#39;exp&#39;)" data-_ph="" style=""><i class="ti ti-plus"></i> Добавить расход</button>
 </div>
 </div>
@@ -358,7 +352,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 
 <div class="totals-grid">
   <div class="totals-col"><h3>Выручка</h3><div id="incomeLines"><div class="total-line bold green"><span class="lbl">Итого</span><span>0 ₽</span></div></div></div>
-  <div class="totals-col"><h3>Расходы</h3><div id="expLines"><div class="total-line vlad"><span class="lbl">Карта Влада</span><span>1&nbsp;000 ₽</span></div><div class="total-line blue"><span class="lbl">Товары</span><span>0 ₽</span></div><div class="total-line prochee"><span class="lbl">Прочее</span><span>1&nbsp;000 ₽</span></div><div class="total-line amber"><span class="lbl">Доставки</span><span>0 ₽</span></div><div class="total-line bold red"><span class="lbl">Итого расходы</span><span>1&nbsp;000 ₽</span></div></div></div>
+  <div class="totals-col"><h3>Расходы</h3><div id="expLines"><div class="total-line blue"><span class="lbl">Товары</span><span>0 ₽</span></div><div class="total-line amber"><span class="lbl">Доставки</span><span>0 ₽</span></div><div class="total-line bold red"><span class="lbl">Итого расходы</span><span>0 ₽</span></div></div></div>
 </div>
 
 <div class="ostatok-block">
