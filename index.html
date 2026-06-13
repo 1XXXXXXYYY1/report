@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_42.html -->
+<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_46.html -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
@@ -206,7 +206,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 <body>
 
 <div id="loginScreen">
-  <div class="win-time" id="winTime">18:06</div>
+  <div class="win-time" id="winTime">18:50</div>
   <div class="win-date" id="winDate">Суббота, 13 июня</div>
   <div class="win-users" id="winUsers">
     <div class="win-user" id="wu-ADMIN" onclick="selectUser(&#39;ADMIN&#39;)">
@@ -235,7 +235,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
       <span onclick="backToUsers()" style="color:rgba(255,255,255,0.5);font-size:12px;cursor:pointer;text-decoration:underline;">← Сменить пользователя</span>
     </div>
   </div>
-  <div class="win-clock-bar" id="winClockBar">18:06</div>
+  <div class="win-clock-bar" id="winClockBar">18:50</div>
 </div>
 
 <div class="wrap" id="mainApp" style="display:none">
@@ -736,7 +736,9 @@ function takeScreenshot() {
   btn.disabled = true;
   btn.innerHTML = '<span class="btn-spinner"></span> Создаём...';
 
-  // Собираем все элементы которые нужно скрыть
+  // Загружаем html2canvas динамически если ещё не загружен
+  function runScreenshot() {
+    // Собираем все элементы которые нужно скрыть
   var toHide = Array.from(document.querySelectorAll(
     '.actions, #flash, .toggle-btn, .add-row-btn, .del-btn, #addSectionBtn, #addSectionPanel, #autosave-bar'
   ));
@@ -845,6 +847,18 @@ function takeScreenshot() {
       }
     }, 200);
   }); });
+  } // end runScreenshot
+
+  // Запускаем — если html2canvas уже загружен, сразу, иначе грузим с CDN
+  if (typeof html2canvas === 'function') {
+    runScreenshot();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    s.onload = function() { runScreenshot(); };
+    s.onerror = function() { fail(new Error('Не удалось загрузить html2canvas')); };
+    document.head.appendChild(s);
+  }
 }
 function saveReport() {
   var btn = document.getElementById('saveBtn');
