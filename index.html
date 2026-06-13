@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_34.html -->
+<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_35.html -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ежедневный отчёт BarabashTech</title>
-<link rel="stylesheet" href="./Ежедневный отчёт BarabashTech_files/tabler-icons.min.css">
-<link href="./Ежедневный отчёт BarabashTech_files/css2" rel="stylesheet">
+<link rel="stylesheet" href="file:///C:/Users/PC/Downloads/%D0%95%D0%B6%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%82%D1%87%D1%91%D1%82%20BarabashTech_files/tabler-icons.min.css">
+<link href="file:///C:/Users/PC/Downloads/%D0%95%D0%B6%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%82%D1%87%D1%91%D1%82%20BarabashTech_files/css2" rel="stylesheet">
 <style>
 /* LOGIN WINDOWS STYLE */
 #loginScreen{
@@ -201,12 +201,12 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 #autosave-bar .dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
 @media print{#autosave-bar{display:none!important}}
 </style>
-<script src="./Ежедневный отчёт BarabashTech_files/html2canvas.min.js.Без названия"></script>
+<script src="file:///C:/Users/PC/Downloads/%D0%95%D0%B6%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%82%D1%87%D1%91%D1%82%20BarabashTech_files/html2canvas.min.js.%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F"></script>
 </head>
 <body>
 
 <div id="loginScreen">
-  <div class="win-time" id="winTime">17:10</div>
+  <div class="win-time" id="winTime">17:26</div>
   <div class="win-date" id="winDate">Суббота, 13 июня</div>
   <div class="win-users" id="winUsers">
     <div class="win-user" id="wu-ADMIN" onclick="selectUser(&#39;ADMIN&#39;)">
@@ -235,7 +235,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
       <span onclick="backToUsers()" style="color:rgba(255,255,255,0.5);font-size:12px;cursor:pointer;text-decoration:underline;">← Сменить пользователя</span>
     </div>
   </div>
-  <div class="win-clock-bar" id="winClockBar">17:10</div>
+  <div class="win-clock-bar" id="winClockBar">17:26</div>
 </div>
 
 <div class="wrap" id="mainApp" style="display:none">
@@ -465,7 +465,7 @@ function render(tbl) {
 }
 
 function esc(s){ return (s||'').replace(/"/g,'&quot;'); }
-function upd(tbl,id,field,val){ const r=data[tbl].find(x=>x.id===id); if(r){ r[field]=val; clearTimeout(_syncTimer); _syncTimer=setTimeout(saveState,2000); } }
+function upd(tbl,id,field,val){ const r=data[tbl].find(x=>x.id===id); if(r){ r[field]=val; } }
 
 function updSkupPay(id, val) {
   var r = data.skup.find(x=>x.id===id);
@@ -485,7 +485,6 @@ function updSkupNalPer(id, field, val) {
   if (!r) return;
   r[field] = val;
   r.buyPrice = (parseFloat(r.buyNal)||0) + (parseFloat(r.buyPer)||0);
-  clearTimeout(_syncTimer); _syncTimer = setTimeout(saveState, 2000);
   recalc();
 }
 
@@ -984,7 +983,7 @@ function updExpNalPer(id, field, val) {
 
 // ─── FIREBASE СИНХРОНИЗАЦИЯ ───────────────────────────────────
 var FIREBASE_URL = 'https://report-ef956-default-rtdb.firebaseio.com';
-var _syncTimer = null;
+// _syncTimer удалён — автосохранение отключено, только ручное
 var _isLoading = false;
 var _lastSaveTime = 0;
 
@@ -1115,8 +1114,8 @@ function showAutosaveBar(msg, ok) {
 // Сохраняем при закрытии/уходе со страницы
 window.addEventListener('beforeunload', saveState);
 
-// Автосохранение каждую минуту
-setInterval(saveState, 60000);
+// Автосохранение каждую минуту — ОТКЛЮЧЕНО (только ручное сохранение)
+// setInterval(saveState, 60000);
 
 // Переопределяем clearAll, чтобы чистился и localStorage
 var _origClearAll = clearAll;
