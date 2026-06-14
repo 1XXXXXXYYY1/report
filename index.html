@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_55.html -->
+<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_56.html -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
@@ -206,7 +206,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 <body>
 
 <div id="loginScreen">
-  <div class="win-time" id="winTime">15:29</div>
+  <div class="win-time" id="winTime">15:38</div>
   <div class="win-date" id="winDate">Воскресенье, 14 июня</div>
   <div class="win-users" id="winUsers">
     <div class="win-user" id="wu-ADMIN" onclick="selectUser(&#39;ADMIN&#39;)">
@@ -235,7 +235,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
       <span onclick="backToUsers()" style="color:rgba(255,255,255,0.5);font-size:12px;cursor:pointer;text-decoration:underline;">← Сменить пользователя</span>
     </div>
   </div>
-  <div class="win-clock-bar" id="winClockBar">15:29</div>
+  <div class="win-clock-bar" id="winClockBar">15:38</div>
 </div>
 
 <div class="wrap" id="mainApp" style="display:none">
@@ -249,9 +249,9 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
   <div id="sectionToggles"></div>
 </div>
 <div class="meta-row">
-  <div class="meta-field"><div class="meta-label">Ответственный</div><input type="text" id="responsible" placeholder="Имя"></div>
-  <div class="meta-field"><div class="meta-label">Дата</div><input type="date" id="reportDate" value="2026-05-27"></div>
-  <div class="meta-field"><div class="meta-label">Остаток нала (начало дня, ₽)</div><input type="number" id="cashStart" placeholder="0" oninput="recalc()"></div>
+  <div class="meta-field"><div class="meta-label">Ответственный</div><input type="text" id="responsible" placeholder="Имя" oninput="scheduleSync()"></div>
+  <div class="meta-field"><div class="meta-label">Дата</div><input type="date" id="reportDate" value="2026-05-27" onchange="scheduleSync()"></div>
+  <div class="meta-field"><div class="meta-label">Остаток нала (начало дня, ₽)</div><input type="number" id="cashStart" placeholder="0" oninput="recalc();scheduleSync()"></div>
 </div>
 
 <div class="section-block" id="block_orders">
@@ -261,7 +261,11 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
     <th style="width:37%">Номер заказа</th>
     <th style="width:23%">Сумма (₽)</th>
     <th style="width:32%">Способ оплаты</th>
-  </tr></thead><tbody id="ordersBody"></tbody></table>
+  </tr></thead><tbody id="ordersBody"><tr>
+        <td><input type="text" value="1" placeholder="..." oninput="upd(&#39;orders&#39;,1781440313894.1326,&#39;col1&#39;,this.value)"></td>
+        <td><input type="number" value="1" placeholder="0" oninput="upd(&#39;orders&#39;,1781440313894.1326,&#39;col2&#39;,this.value);recalc()"></td>
+        <td class="has-del"><select onchange="updPay(&#39;orders&#39;,1781440313894.1326,this.value)"><option selected="">Наличные</option><option>Нал/Пер</option><option>Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Сплит</option><option>Р/С</option><option>Рассрочка</option><option>Яндекс Маркет</option><option>Перевод</option></select><button class="del-btn" onclick="delRow(&#39;orders&#39;,1781440313894.1326)" title="Удалить"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></td>
+      </tr></tbody></table>
   <button class="add-row-btn" onclick="addRow(&#39;orders&#39;)" data-_ph="" style=""><i class="ti ti-plus"></i> Добавить заказ</button>
 </div>
 </div>
@@ -273,7 +277,15 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
     <th style="width:37%">Название</th>
     <th style="width:23%">Сумма (₽)</th>
     <th style="width:32%">Способ оплаты</th>
-  </tr></thead><tbody id="partsBody"></tbody></table>
+  </tr></thead><tbody id="partsBody"><tr>
+        <td><input type="text" value="111" placeholder="..." oninput="upd(&#39;parts&#39;,1781440399821.4648,&#39;col1&#39;,this.value)"></td>
+        <td><input type="number" value="111" placeholder="0" oninput="upd(&#39;parts&#39;,1781440399821.4648,&#39;col2&#39;,this.value);recalc()"></td>
+        <td class="has-del"><select onchange="updPay(&#39;parts&#39;,1781440399821.4648,this.value)"><option selected="">Наличные</option><option>Нал/Пер</option><option>Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Сплит</option><option>Р/С</option><option>Рассрочка</option><option>Яндекс Маркет</option><option>Перевод</option></select><button class="del-btn" onclick="delRow(&#39;parts&#39;,1781440399821.4648)" title="Удалить"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></td>
+      </tr><tr>
+        <td><input type="text" value="" placeholder="..." oninput="upd(&#39;parts&#39;,1781440401171.2988,&#39;col1&#39;,this.value)"></td>
+        <td><input type="number" value="" placeholder="0" oninput="upd(&#39;parts&#39;,1781440401171.2988,&#39;col2&#39;,this.value);recalc()"></td>
+        <td class="has-del"><select onchange="updPay(&#39;parts&#39;,1781440401171.2988,this.value)"><option selected="">Наличные</option><option>Нал/Пер</option><option>Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Сплит</option><option>Р/С</option><option>Рассрочка</option><option>Яндекс Маркет</option><option>Перевод</option></select><button class="del-btn" onclick="delRow(&#39;parts&#39;,1781440401171.2988)" title="Удалить"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></td>
+      </tr></tbody></table>
   <button class="add-row-btn" onclick="addRow(&#39;parts&#39;)" data-_ph="" style=""><i class="ti ti-plus"></i> Добавить позицию</button>
 </div>
 </div>
@@ -351,13 +363,13 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 </div>
 
 <div class="totals-grid">
-  <div class="totals-col"><h3>Выручка</h3><div id="incomeLines"><div class="total-line bold green"><span class="lbl">Итого</span><span>0 ₽</span></div></div></div>
+  <div class="totals-col"><h3>Выручка</h3><div id="incomeLines"><div class="total-line cash"><span class="lbl">Наличные</span><span>112 ₽</span></div><div class="total-line bold green"><span class="lbl">Итого</span><span>112 ₽</span></div></div></div>
   <div class="totals-col"><h3>Расходы</h3><div id="expLines"><div class="total-line blue"><span class="lbl">Товары</span><span>0 ₽</span></div><div class="total-line amber"><span class="lbl">Доставки</span><span>0 ₽</span></div><div class="total-line bold red"><span class="lbl">Итого расходы</span><span>0 ₽</span></div></div></div>
 </div>
 
 <div class="ostatok-block">
   <div class="lbl">Остаток нала</div>
-  <div class="val" id="ostatok">0 ₽</div>
+  <div class="val" id="ostatok">112 ₽</div>
 </div>
 
 <div class="actions" style="justify-content: space-between; align-items: center;" data-_ph="">
@@ -397,9 +409,10 @@ function addRow(tbl) {
   else if(tbl==='skup')     data[tbl].push({id,name:'',buyPrice:'',potPrice:'',pay:'Наличные'});
   else                  data[tbl].push({id,col1:'',col2:'',col2nal:'',col2per:'',pay:'Наличные'});
   render(tbl);
+  scheduleSync();
 }
 
-function delRow(tbl,id){ data[tbl]=data[tbl].filter(r=>r.id!==id); render(tbl); recalc(); }
+function delRow(tbl,id){ data[tbl]=data[tbl].filter(r=>r.id!==id); render(tbl); recalc(); scheduleSync(); }
 
 function render(tbl) {
   const body = document.getElementById(tbl+'Body');
@@ -459,7 +472,7 @@ function render(tbl) {
 }
 
 function esc(s){ return (s||'').replace(/"/g,'&quot;'); }
-function upd(tbl,id,field,val){ const r=data[tbl].find(x=>x.id===id); if(r){ r[field]=val; } }
+function upd(tbl,id,field,val){ const r=data[tbl].find(x=>x.id===id); if(r){ r[field]=val; scheduleSync(); } }
 
 function updSkupPay(id, val) {
   var r = data.skup.find(x=>x.id===id);
@@ -472,6 +485,7 @@ function updSkupPay(id, val) {
   }
   render('skup');
   recalc();
+  scheduleSync();
 }
 
 function updSkupNalPer(id, field, val) {
@@ -480,6 +494,7 @@ function updSkupNalPer(id, field, val) {
   r[field] = val;
   r.buyPrice = (parseFloat(r.buyNal)||0) + (parseFloat(r.buyPer)||0);
   recalc();
+  scheduleSync();
 }
 
 function toggleExpCat(id) {
@@ -488,6 +503,7 @@ function toggleExpCat(id) {
   r.cat = (r.cat === 'p') ? 't' : 'p';
   render('exp');
   recalc();
+  scheduleSync();
 }
 function updSel(tbl,id,field,val){ upd(tbl,id,field,val); recalc(); }
 
@@ -902,6 +918,7 @@ function toggleSection(sid) {
   if (!body) return;
   var collapsed = body.classList.toggle('collapsed');
   if (btn) btn.textContent = collapsed ? '+' : '\u2212';
+  scheduleSync();
 }
 
 var SECTIONS_LIST = [
@@ -994,6 +1011,12 @@ var FIREBASE_URL = 'https://report-ef956-default-rtdb.firebaseio.com';
 // _syncTimer удалён — автосохранение отключено, только ручное
 var _isLoading = false;
 var _lastSaveTime = 0;
+var _autoSyncTimer = null;
+
+function scheduleSync() {
+  clearTimeout(_autoSyncTimer);
+  _autoSyncTimer = setTimeout(saveState, 800);
+}
 
 function getTodayKey() {
   var d = document.getElementById('reportDate').value || new Date().toISOString().slice(0,10);
@@ -1044,6 +1067,7 @@ function loadState() {
 function applyState(state) {
   if (!state) return false;
   _isLoading = true;
+  var active = document.activeElement;
   if (state.responsible !== undefined) document.getElementById('responsible').value = state.responsible;
   if (state.reportDate  !== undefined) document.getElementById('reportDate').value  = state.reportDate;
   if (state.cashStart   !== undefined) document.getElementById('cashStart').value   = state.cashStart;
@@ -1061,6 +1085,10 @@ function applyState(state) {
   ['orders','parts','prepay','warranty','exp','chp','comments','skup'].forEach(render);
   recalc();
   _isLoading = false;
+  // Восстанавливаем фокус если пользователь что-то вводил
+  if (active && active !== document.body) {
+    try { active.focus(); } catch(e) {}
+  }
   return true;
 }
 
