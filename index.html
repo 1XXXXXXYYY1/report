@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_56.html -->
+<!-- saved from url=(0043)file:///C:/Users/PC/Downloads/index_57.html -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
@@ -206,7 +206,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 <body>
 
 <div id="loginScreen">
-  <div class="win-time" id="winTime">15:38</div>
+  <div class="win-time" id="winTime">15:50</div>
   <div class="win-date" id="winDate">Воскресенье, 14 июня</div>
   <div class="win-users" id="winUsers">
     <div class="win-user" id="wu-ADMIN" onclick="selectUser(&#39;ADMIN&#39;)">
@@ -235,7 +235,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
       <span onclick="backToUsers()" style="color:rgba(255,255,255,0.5);font-size:12px;cursor:pointer;text-decoration:underline;">← Сменить пользователя</span>
     </div>
   </div>
-  <div class="win-clock-bar" id="winClockBar">15:38</div>
+  <div class="win-clock-bar" id="winClockBar">15:50</div>
 </div>
 
 <div class="wrap" id="mainApp" style="display:none">
@@ -261,11 +261,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
     <th style="width:37%">Номер заказа</th>
     <th style="width:23%">Сумма (₽)</th>
     <th style="width:32%">Способ оплаты</th>
-  </tr></thead><tbody id="ordersBody"><tr>
-        <td><input type="text" value="1" placeholder="..." oninput="upd(&#39;orders&#39;,1781440313894.1326,&#39;col1&#39;,this.value)"></td>
-        <td><input type="number" value="1" placeholder="0" oninput="upd(&#39;orders&#39;,1781440313894.1326,&#39;col2&#39;,this.value);recalc()"></td>
-        <td class="has-del"><select onchange="updPay(&#39;orders&#39;,1781440313894.1326,this.value)"><option selected="">Наличные</option><option>Нал/Пер</option><option>Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Сплит</option><option>Р/С</option><option>Рассрочка</option><option>Яндекс Маркет</option><option>Перевод</option></select><button class="del-btn" onclick="delRow(&#39;orders&#39;,1781440313894.1326)" title="Удалить"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></td>
-      </tr></tbody></table>
+  </tr></thead><tbody id="ordersBody"></tbody></table>
   <button class="add-row-btn" onclick="addRow(&#39;orders&#39;)" data-_ph="" style=""><i class="ti ti-plus"></i> Добавить заказ</button>
 </div>
 </div>
@@ -277,15 +273,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
     <th style="width:37%">Название</th>
     <th style="width:23%">Сумма (₽)</th>
     <th style="width:32%">Способ оплаты</th>
-  </tr></thead><tbody id="partsBody"><tr>
-        <td><input type="text" value="111" placeholder="..." oninput="upd(&#39;parts&#39;,1781440399821.4648,&#39;col1&#39;,this.value)"></td>
-        <td><input type="number" value="111" placeholder="0" oninput="upd(&#39;parts&#39;,1781440399821.4648,&#39;col2&#39;,this.value);recalc()"></td>
-        <td class="has-del"><select onchange="updPay(&#39;parts&#39;,1781440399821.4648,this.value)"><option selected="">Наличные</option><option>Нал/Пер</option><option>Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Сплит</option><option>Р/С</option><option>Рассрочка</option><option>Яндекс Маркет</option><option>Перевод</option></select><button class="del-btn" onclick="delRow(&#39;parts&#39;,1781440399821.4648)" title="Удалить"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></td>
-      </tr><tr>
-        <td><input type="text" value="" placeholder="..." oninput="upd(&#39;parts&#39;,1781440401171.2988,&#39;col1&#39;,this.value)"></td>
-        <td><input type="number" value="" placeholder="0" oninput="upd(&#39;parts&#39;,1781440401171.2988,&#39;col2&#39;,this.value);recalc()"></td>
-        <td class="has-del"><select onchange="updPay(&#39;parts&#39;,1781440401171.2988,this.value)"><option selected="">Наличные</option><option>Нал/Пер</option><option>Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Сплит</option><option>Р/С</option><option>Рассрочка</option><option>Яндекс Маркет</option><option>Перевод</option></select><button class="del-btn" onclick="delRow(&#39;parts&#39;,1781440401171.2988)" title="Удалить"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></td>
-      </tr></tbody></table>
+  </tr></thead><tbody id="partsBody"></tbody></table>
   <button class="add-row-btn" onclick="addRow(&#39;parts&#39;)" data-_ph="" style=""><i class="ti ti-plus"></i> Добавить позицию</button>
 </div>
 </div>
@@ -297,7 +285,11 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
     <th style="width:37%">Номер заказа</th>
     <th style="width:23%">Сумма предоплаты (₽)</th>
     <th style="width:32%">Способ оплаты</th>
-  </tr></thead><tbody id="prepayBody"></tbody></table>
+  </tr></thead><tbody id="prepayBody"><tr>
+        <td><input type="text" value="RTX3060" placeholder="..." oninput="upd(&#39;prepay&#39;,1781441125678.834,&#39;col1&#39;,this.value)"></td>
+        <td><input type="number" value="10000" placeholder="0" oninput="upd(&#39;prepay&#39;,1781441125678.834,&#39;col2&#39;,this.value);recalc()"></td>
+        <td class="has-del"><select onchange="updPay(&#39;prepay&#39;,1781441125678.834,this.value)"><option selected="">Наличные</option><option>Нал/Пер</option><option>Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Сплит</option><option>Р/С</option><option>Рассрочка</option><option>Яндекс Маркет</option><option>Перевод</option></select><button class="del-btn" onclick="delRow(&#39;prepay&#39;,1781441125678.834)" title="Удалить"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></td>
+      </tr></tbody></table>
   <button class="add-row-btn" onclick="addRow(&#39;prepay&#39;)" data-_ph="" style=""><i class="ti ti-plus"></i> Добавить</button>
 </div>
 </div>
@@ -349,7 +341,7 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
   </div>
 </div>
 
-<div class="section-block" id="block_skup" style="display:none">
+<div class="section-block" id="block_skup" style="">
   <div class="section-title"><span>Скупка</span><button class="toggle-btn" onclick="toggleSection(&#39;skup&#39;)" id="btn_skup" data-_ph="" style="">−</button></div>
   <div class="section-body" id="body_skup">
   <table><thead><tr>
@@ -357,19 +349,24 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
     <th style="width:90px;min-width:90px">Цена покупки</th>
     <th>Потенциальная цена</th>
     <th style="min-width:120px">Способ оплаты</th>
-  </tr></thead><tbody id="skupBody"></tbody></table>
+  </tr></thead><tbody id="skupBody"><tr>
+      <td><input type="text" value="12400*2/5070*2/32D4+16D4/1TB+500GB" placeholder="Название..." oninput="upd(&#39;skup&#39;,1781441057920.0298,&#39;name&#39;,this.value)"></td>
+      <td><input type="number" value="140000" placeholder="0" style="max-width:80px" oninput="upd(&#39;skup&#39;,1781441057920.0298,&#39;buyPrice&#39;,this.value);recalc()"></td>
+      <td><input type="number" value="180000" placeholder="0" oninput="upd(&#39;skup&#39;,1781441057920.0298,&#39;potPrice&#39;,this.value)"></td>
+      <td class="has-del"><select onchange="updSkupPay(1781441057920.0298,this.value)"><option selected="">Карта Влада</option><option>Карта Артема</option><option>Карта Кирилла</option><option>Карта Эдуарда</option><option>Наличные</option><option>Нал/Пер</option><option>Р/С</option><option>Перевод</option></select><button class="del-btn" onclick="delRow(&#39;skup&#39;,1781441057920.0298)" title="Удалить"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></td>
+    </tr></tbody></table>
   <button class="add-row-btn" onclick="addRow(&#39;skup&#39;)"><i class="ti ti-plus"></i> Добавить позицию</button>
   </div>
 </div>
 
 <div class="totals-grid">
-  <div class="totals-col"><h3>Выручка</h3><div id="incomeLines"><div class="total-line cash"><span class="lbl">Наличные</span><span>112 ₽</span></div><div class="total-line bold green"><span class="lbl">Итого</span><span>112 ₽</span></div></div></div>
-  <div class="totals-col"><h3>Расходы</h3><div id="expLines"><div class="total-line blue"><span class="lbl">Товары</span><span>0 ₽</span></div><div class="total-line amber"><span class="lbl">Доставки</span><span>0 ₽</span></div><div class="total-line bold red"><span class="lbl">Итого расходы</span><span>0 ₽</span></div></div></div>
+  <div class="totals-col"><h3>Выручка</h3><div id="incomeLines"><div class="total-line cash"><span class="lbl">Наличные</span><span>10&nbsp;000 ₽</span></div><div class="total-line bold green"><span class="lbl">Итого</span><span>10&nbsp;000 ₽</span></div></div></div>
+  <div class="totals-col"><h3>Расходы</h3><div id="expLines"><div class="total-line vlad"><span class="lbl">Карта Влада</span><span>140&nbsp;000 ₽</span></div><div class="total-line blue"><span class="lbl">Товары</span><span>0 ₽</span></div><div class="total-line amber"><span class="lbl">Доставки</span><span>0 ₽</span></div><div class="total-line orange"><span class="lbl">Скупка</span><span>140&nbsp;000 ₽</span></div><div class="total-line bold red"><span class="lbl">Итого расходы</span><span>140&nbsp;000 ₽</span></div></div></div>
 </div>
 
 <div class="ostatok-block">
   <div class="lbl">Остаток нала</div>
-  <div class="val" id="ostatok">112 ₽</div>
+  <div class="val" id="ostatok">10&nbsp;000 ₽</div>
 </div>
 
 <div class="actions" style="justify-content: space-between; align-items: center;" data-_ph="">
@@ -1035,7 +1032,8 @@ function saveState() {
       cashStart:   document.getElementById('cashStart').value,
       data:        data,
       sections:    {},
-      ts: now
+      ts: now,
+      _sid: _sessionId
     };
     SECTIONS_LIST.forEach(function(s) {
       var block = document.getElementById('block_' + s.id);
@@ -1114,6 +1112,8 @@ function loadFromFirebase() {
 
 // Realtime подписка — обновление каждую минуту
 // Realtime подписка через SSE — мгновенное обновление при сохранении другим пользователем
+var _sessionId = Date.now() + '_' + Math.random().toString(36).slice(2); // уникальный ID этой вкладки
+
 function startRealtimeSync() {
   var key = getTodayKey();
   var url = FIREBASE_URL + '/reports/' + key + '.json?alt=sse';
@@ -1121,10 +1121,11 @@ function startRealtimeSync() {
   var isFirst = true;
 
   function handleState(state) {
-    if (state && state.ts && state.ts > _lastSaveTime) {
-      applyState(state);
-      showAutosaveBar('↓ Обновлено другим пользователем', true);
-    }
+    if (!state || !state.ts) return;
+    // Пропускаем только своё собственное обновление
+    if (state._sid === _sessionId) return;
+    applyState(state);
+    showAutosaveBar('↓ Обновлено другим пользователем', true);
   }
 
   es.addEventListener('put', function(e) {
